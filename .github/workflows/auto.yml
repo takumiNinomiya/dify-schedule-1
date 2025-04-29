@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  DIFY_TOKES: ${{ secrets.DIFY_TOKES }}
+  DIFY_TOKENS: ${{ secrets.DIFY_TOKENS }}
   DIFY_BASE_URL: ${{ secrets.DIFY_BASE_URL }}
 
 jobs:
