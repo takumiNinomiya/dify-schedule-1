@@ -1,4 +1,4 @@
-name: Auto
+name: WorldNews
 
 on:
   schedule:
