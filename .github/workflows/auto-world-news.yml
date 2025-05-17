@@ -1,0 +1,23 @@
+name: Auto
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # 北京时间上午06:30
+    - cron: "0 4 * * *" # 北京时间上午06:30
+    - cron: "0 9 * * *" # 北京时间上午06:30
+  workflow_dispatch:
+
+env:
+  DIFY_TOKENS: ${{ secrets.DIFY_TOKENS_WORLDNEWS }}
+  DIFY_BASE_URL: ${{ secrets.DIFY_BASE_URL }}
+
+jobs:
+  DifyWorkflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Run Project
+        run: |
+          yarn
+          yarn workflowDify
